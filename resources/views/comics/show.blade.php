@@ -16,6 +16,10 @@
                 <p class="my-2"><strong class="text-uppercase text-orange">Released</strong> : {{ $comic ['sale_date'] }}</p>
                 <hr>
                 <h4 class="text-green my-4">{{ $comic ['price'] }}</h4>
+                <hr>
+                <div class="text-center">
+                    <a class="btn btn-warning text-uppercase" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">edit</a>
+                </div>
             </div>
         </div>
     </div>
