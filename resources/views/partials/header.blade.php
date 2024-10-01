@@ -1,5 +1,5 @@
 <header>
-    <div class="header-top bg-primary">
+    <div class="bg-primary">
         <div class="container-header">
             <div class="row">
                 <div class="col-12 text-end fs-11">
@@ -10,16 +10,16 @@
         </div>
     </div>
     <div class="container-header">
-        <div class="row">
+        <div class="row align-items-baseline">
             <div class="col-4">
                 <div class="text-center">
                     <a href="{{ route('homepage')}}"><img src="{{ Vite::asset('resources/images/dc-logo.png')}}" alt="dc-comics"></a>
                 </div>
             </div>
             <div class="col-8">
-                <ul class="list-unstyled h-100 text-uppercase d-flex align-items-center">
+                <ul class="list-unstyled text-uppercase d-flex">
                     <li><a href="#">Characters</a></li>
-                    <li><a class="{{ Route::currentRouteName() === 'comics' ? 'active' : ''}}">Comics</a></li>
+                    <li><a class="{{ Route::currentRouteName() === 'comics.index' ? 'active' : ''}}" href="{{ route('comics.index') }}">Comics</a></li>
                     <li><a href="#">Movies</a></li>
                     <li><a href="#">Tv</a></li>
                     <li><a href="#">Games</a></li>

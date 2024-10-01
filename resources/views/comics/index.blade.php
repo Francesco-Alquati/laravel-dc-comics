@@ -8,16 +8,18 @@
             </div>
         </div>
     </div>
-    <div class="container-home bg-darkgrey position-relative">
+    <div class="container-home bg-darkgrey">
         <div class="row">
             <div class="card-container mt-5 mb-5">
                 <div class="row">
                     @foreach ($comics as $comic)
                         <div class="col-2 py-3">
-                            <div class="comics-card">
-                                <img src="{{ $comic['thumb'] }}" alt="{{ $comic ['title'] }}">
-                                <div class="mt-2 text-white text-uppercase fs-11">{{ $comic ['series'] }}</div>
-                            </div>
+                            <a href="{{ route('comics.show', ['comic' => $comic->id]) }}">
+                                <div class="comics-card">
+                                    <img src="{{ $comic['thumb'] }}" alt="{{ $comic ['title'] }}">
+                                    <div class="mt-2 text-white text-uppercase fs-6">{{ $comic ['series'] }}</div>
+                                </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>
