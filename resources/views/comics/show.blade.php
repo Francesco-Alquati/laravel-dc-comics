@@ -17,8 +17,13 @@
                 <hr>
                 <h4 class="text-green my-4">{{ $comic ['price'] }}</h4>
                 <hr>
-                <div class="text-center">
-                    <a class="btn btn-warning text-uppercase" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">edit</a>
+                <div class=" d-flex justify-content-center">
+                    <a class="btn btn-warning btn-sm w-90 text-uppercase me-2" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">edit</a>
+                    <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm w-90 text-uppercase" >delete</button>
+                    </form>
                 </div>
             </div>
         </div>
