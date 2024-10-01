@@ -7,13 +7,15 @@
                 <img class="comics-img border border-white" src="{{ $comic['thumb'] }}" alt="{{ $comic ['title'] }}">
             </div>
             <div class="col-6 text-white">
-                <h1>{{ $comic ['series'] }}</h1>
-                <h3 class="text-warning my-3 text-uppercase">{{ $comic ['type'] }}</h3>
+                <h1 class="mb-0">{{ $comic ['series'] }}</h1>
+                <h6 class="text-info">{{ $comic ['title'] }}</h6>
+                <h3 class="text-yellow mt-4 text-uppercase">{{ $comic ['type'] }}</h3>
                 <p class="my-4">{{ $comic ['description'] }}</p>
-                <h4 class="text-success my-4">{{ $comic ['price'] }}</h4>
-                <h3>{{ $comic ['sale_date'] }}</h3>
-                <p class="my-4"><strong class="text-uppercase text-danger">Artists</strong>: {{ $comic ['artists'] }}</p>
-                <p class="my-4"><strong class="text-uppercase text-danger">Writers</strong>: {{ $comic ['writers'] }}</p>
+                <p class="my-2"><strong class="text-uppercase text-orange">Artists</strong> : {{ $comic ['artists'] }}</p>
+                <p class="my-2"><strong class="text-uppercase text-orange">Writers</strong> : {{ $comic ['writers'] }}</p>
+                <p class="my-2"><strong class="text-uppercase text-orange">Released</strong> : {{ $comic ['sale_date'] }}</p>
+                <hr>
+                <h4 class="text-green my-4">{{ $comic ['price'] }}</h4>
             </div>
         </div>
     </div>

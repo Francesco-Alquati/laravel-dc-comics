@@ -10,7 +10,10 @@
     </div>
     <div class="container-home bg-darkgrey">
         <div class="row">
-            <div class="card-container mt-5 mb-5">
+            <div class="col-12 text-center gy-4">
+                <a href="{{ route('comics.create') }}" class="btn btn-primary">Aggiungi Fumetto</a>
+            </div>
+            <div class="card-container mt-2 mb-5">
                 <div class="row">
                     @foreach ($comics as $comic)
                         <div class="col-2 py-3">
