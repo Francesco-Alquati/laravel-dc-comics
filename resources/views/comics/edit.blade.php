@@ -4,7 +4,7 @@
     <div class="container-header rounded-5 bg-black">
         <div class="row">
             <div class="col-12">
-                <form method="POST" action="{{ route('comics.update', ['comic' => $comic->id]) }}">
+                <form method="post" action="{{ route('comics.update', ['comic' => $comic->id]) }}">
                     @csrf
                     @method('PUT')
                     <div class="row gy-4 p-3 text-white">

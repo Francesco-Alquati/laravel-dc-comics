@@ -37,19 +37,21 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $form_data = $request -> all();
+        $form_data = $request->all();
 
         $comic = new Comic();
+        
+        $comic->fill($form_data);
 
-        $comic->title = $form_data['title'];
-        $comic->description = $form_data['description'];
-        $comic->thumb = $form_data['thumb'];
-        $comic->price = $form_data['price'];
-        $comic->series = $form_data['series'];
-        $comic->sale_date = $form_data['sale_date'];
-        $comic->type = $form_data['type'];
-        $comic->artists = $form_data['artists'];
-        $comic->writers = $form_data['writers'];
+        // $comic->title = $form_data['title'];
+        // $comic->description = $form_data['description'];
+        // $comic->thumb = $form_data['thumb'];
+        // $comic->price = $form_data['price'];
+        // $comic->series = $form_data['series'];
+        // $comic->sale_date = $form_data['sale_date'];
+        // $comic->type = $form_data['type'];
+        // $comic->artists = $form_data['artists'];
+        // $comic->writers = $form_data['writers'];
 
         $comic->save();
         
@@ -86,9 +88,13 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $form_data = $request->all();
+
+        $comic->update($form_data);
+
+        return redirect()->route('comics.show', compact('comic'));
     }
 
     /**
