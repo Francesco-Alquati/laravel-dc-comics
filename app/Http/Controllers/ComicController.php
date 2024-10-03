@@ -100,10 +100,10 @@ class ComicController extends Controller
     {
         $request->validate([
             'title' => 'required|max:255',
-            'thumb' => 'max:255',
+            'thumb' => 'required',
             'price' => 'required|max:10',
             'sale_date' => 'required|date',
-            'tyoe' => 'required|max:255',
+            'type' => 'required|max:255',
         ]);
 
         $form_data = $request->all();

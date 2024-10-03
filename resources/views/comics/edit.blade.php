@@ -4,6 +4,15 @@
     <div class="container-header rounded-5 bg-black">
         <div class="row">
             <div class="col-12">
+                @if ($errors->any())
+                    <div class="mt-5 ms-3 text-danger">
+                        <ul class="list-unstyled mb-5">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}<li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form method="post" action="{{ route('comics.update', ['comic' => $comic->id]) }}">
                     @csrf
                     @method('PUT')
